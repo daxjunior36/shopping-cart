@@ -43,14 +43,25 @@ function createCartItemElement({ sku, name, salePrice }) {
   olPai.appendChild(li);
   return li;
 }
+const carregaPagina = (() => {
+  const elemento = document.createElement('span');
+  elemento.innerText = 'carregando...';
+  elemento.className = 'loading';
+  olPai.appendChild(elemento);
+});
+const removCarregaPagina = (() => {
+const loading = document.getElementsByClassName('loading')[0];
+olPai.removeChild(loading);
+console.log(loading);
+});
 const criarElementos = async (item) => {
   const produtos = await fetchProducts(item);
   const listaDeProdutos = produtos.results;
   listaDeProdutos.forEach((objeto) => {
   containerPrincipal.appendChild(createProductItemElement(objeto));
   });
-  console.log(listaDeProdutos);
-};
+  removCarregaPagina();
+ };
 const adicionaCarinho = async (event) => {
   if (event.target.className === 'item__add') {
     const id = event.target.parentElement.firstChild.innerText;
@@ -62,8 +73,10 @@ const adicionaCarinho = async (event) => {
     });
   }
 };
+
 window.onload = () => {
   criarElementos('computador');
+  carregaPagina();
   containerPrincipal.addEventListener('click', adicionaCarinho);
   };
 
