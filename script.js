@@ -1,4 +1,5 @@
 const containerPrincipal = document.querySelector('.items');
+const olPai = document.getElementsByClassName('cart__items')[0];
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -30,15 +31,16 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
-function cartItemClickListener(event) {
-  // coloque seu código aqui
-}
+// function cartItemClickListener(event) {
+//   // coloque seu código aqui
+// }
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
-  li.addEventListener('click', cartItemClickListener);
+  // li.addEventListener('click', cartItemClickListener);
+  olPai.appendChild(li);
   return li;
 }
 const criarElementos = async (item) => {
@@ -49,8 +51,20 @@ const criarElementos = async (item) => {
   });
   console.log(listaDeProdutos);
 };
+const adicionaCarinho = async (event) => {
+  if (event.target.className === 'item__add') {
+    const id = event.target.parentElement.firstChild.innerText;
+    const data = await fetchItem(id);
+    createCartItemElement({
+      sku: data.id,
+      name: data.title,
+      salePrice: data.price,
+    });
+  }
+};
 window.onload = () => {
   criarElementos('computador');
- };
+  containerPrincipal.addEventListener('click', adicionaCarinho);
+  };
 
 // test
