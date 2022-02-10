@@ -28,9 +28,9 @@ function createProductItemElement({ id: sku, title: name, thumbnail: image }) {
   return section;
 }
 
-function getSkuFromProductItem(item) {
-  return item.querySelector('span.item__sku').innerText;
-}
+// function getSkuFromProductItem(item) {
+//   return item.querySelector('span.item__sku').innerText;
+// }
 
 function cartItemClickListener(event) {
   olPai.removeChild(event.target);
@@ -48,11 +48,11 @@ const carregaPagina = (() => {
   const elemento = document.createElement('span');
   elemento.innerText = 'carregando...';
   elemento.className = 'loading';
-  olPai.appendChild(elemento);
+  containerPrincipal.appendChild(elemento);
 });
 const removCarregaPagina = (() => {
 const loading = document.getElementsByClassName('loading')[0];
-olPai.removeChild(loading);
+containerPrincipal.removeChild(loading);
 console.log(loading);
 });
 const criarElementos = async (item) => {
@@ -77,11 +77,12 @@ const adicionaCarinho = async (event) => {
 };
 const esvaziaCarrinho = () => {
 olPai.innerHTML = '';
-}
+};
 
 window.onload = () => {
   criarElementos('computador');
   carregaPagina();
   containerPrincipal.addEventListener('click', adicionaCarinho);
   botaoLimpar.addEventListener('click', esvaziaCarrinho);
+  getSavedCartItems();
   };
