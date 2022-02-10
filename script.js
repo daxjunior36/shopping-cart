@@ -1,5 +1,6 @@
 const containerPrincipal = document.querySelector('.items');
 const olPai = document.getElementsByClassName('cart__items')[0];
+const botaoLimpar = document.getElementsByClassName('empty-cart')[0];
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -71,13 +72,16 @@ const adicionaCarinho = async (event) => {
       name: data.title,
       salePrice: data.price,
     });
+    saveCartItems();
   }
 };
+const esvaziaCarrinho = () => {
+olPai.innerHTML = '';
+}
 
 window.onload = () => {
   criarElementos('computador');
   carregaPagina();
   containerPrincipal.addEventListener('click', adicionaCarinho);
+  botaoLimpar.addEventListener('click', esvaziaCarrinho);
   };
-
-// test
