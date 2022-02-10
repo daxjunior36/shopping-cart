@@ -34,13 +34,13 @@ function createProductItemElement({ id: sku, title: name, thumbnail: image }) {
 
 function cartItemClickListener(event) {
   olPai.removeChild(event.target);
-}
+    saveCartItems();
+  }
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
-  li.addEventListener('click', cartItemClickListener);
   olPai.appendChild(li);
   return li;
 }
@@ -77,6 +77,7 @@ const adicionaCarinho = async (event) => {
 };
 const esvaziaCarrinho = () => {
 olPai.innerHTML = '';
+saveCartItems();
 };
 
 window.onload = () => {
@@ -85,4 +86,5 @@ window.onload = () => {
   containerPrincipal.addEventListener('click', adicionaCarinho);
   botaoLimpar.addEventListener('click', esvaziaCarrinho);
   getSavedCartItems();
+  olPai.addEventListener('click', cartItemClickListener);
   };

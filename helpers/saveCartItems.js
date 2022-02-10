@@ -1,4 +1,5 @@
 const saveCartItems = () => {
+  // localStorage.clear();
   const olPai = document.getElementsByClassName('cart__items')[0];
   const dados = olPai.innerHTML;
  localStorage.setItem('cartItems', dados);
