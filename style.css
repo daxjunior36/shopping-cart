@@ -150,26 +150,3 @@ body {
   width: 90%;
   margin: 8px auto;
 }
-.cart .cart__item:hover , .empty-cart:hover { 
-  color: rgb(221, 221, 221);
-  background-color: rgb(12, 97, 84);
-  transition-duration: 0.5s;
-}
-
-.valorTotal {
-  font-size: 18pt;
-  margin: 0 auto 4px;
-  padding: 20px 0 15px;
-}
-
-.empty-cart {
-  padding: 5px ;
-  width: 170px;
-  font-size: 16pt;
-  height: 65px;
-  margin: 0 auto;
-  border-radius: 5px;
-  border: 2px solid rgb(12, 97, 84);;
-  background-color: rgb(249, 249, 246);
-  box-shadow: 8px 6px 5px rgba(0, 0, 0, 0.4);
-}
