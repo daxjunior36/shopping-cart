@@ -1,3 +1,4 @@
+// 1. Crie uma listagem de produtos.
 const fetchProducts = async (item) => {
   try {
   const url = `https://api.mercadolibre.com/sites/MLB/search?q=${item}`;

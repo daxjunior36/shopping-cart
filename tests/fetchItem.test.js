@@ -2,6 +2,8 @@ require('../mocks/fetchSimulator');
 const { fetchItem } = require('../helpers/fetchItem');
 const item = require('../mocks/item');
 
+// 9. Desenvolva testes de no mínimo 50% de cobertura total e 100% da função fetchItem
+
 describe('2 - Teste a função fecthItem', () => {
   it ('Teste se fetchItem é uma função', () => {
     expect(typeof fetchItem).toBe('function');
