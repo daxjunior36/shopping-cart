@@ -1,5 +1,5 @@
 // 1. Crie uma listagem de produtos.
-const fetchProducts = async (item) => {
+const fetchProducts = async (item) => {// linha de código fornecida pela escola Trybe
   try {
   const url = `https://api.mercadolibre.com/sites/MLB/search?q=${item}`;
   const retorno = await fetch(url);
@@ -10,8 +10,8 @@ const fetchProducts = async (item) => {
   }
 };
 
-if (typeof module !== 'undefined') {
-  module.exports = {
-    fetchProducts,
+if (typeof module !== 'undefined') {// linha de código fornecida pela escola Trybe
+  module.exports = {// linha de código fornecida pela escola Trybe
+    fetchProducts,// linha de código fornecida pela escola Trybe
   };
 }

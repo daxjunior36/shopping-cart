@@ -2,36 +2,37 @@ const containerPrincipal = document.querySelector('.items');
 const olPai = document.getElementsByClassName('cart__items')[0];
 const botaoLimpar = document.getElementsByClassName('empty-cart')[0];
 
-function createProductImageElement(imageSource) {
-  const img = document.createElement('img');
-  img.className = 'item__image';
-  img.src = imageSource;
-  return img;
+function createProductImageElement(imageSource) { // linha de código fornecida pela escola Trybe
+  const img = document.createElement('img');// linha de código fornecida pela escola Trybe
+  img.className = 'item__image';// linha de código fornecida pela escola Trybe
+  img.src = imageSource;// linha de código fornecida pela escola Trybe
+  return img;// linha de código fornecida pela escola Trybe
 }
 
-function createCustomElement(element, className, innerText) {
-  const e = document.createElement(element);
-  e.className = className;
-  e.innerText = innerText;
-  return e;
+function createCustomElement(element, className, innerText) {// linha de código fornecida pela escola Trybe
+  const e = document.createElement(element);// linha de código fornecida pela escola Trybe
+  e.className = className;// linha de código fornecida pela escola Trybe
+  e.innerText = innerText;// linha de código fornecida pela escola Trybe
+  return e;// linha de código fornecida pela escola Trybe
 }
 
-function createProductItemElement({ id: sku, title: name, thumbnail: image }) {
+function createProductItemElement({ id: sku, title: name, thumbnail: image }) {// linha de código fornecida pela escola Trybe
   const section = document.createElement('section');
   section.className = 'item';
 const novaImagem = image.replace('I.jpg', 'J.jpg');
 
-  section.appendChild(createCustomElement('span', 'item__sku', sku));
-  section.appendChild(createCustomElement('span', 'item__title', name));
-  section.appendChild(createProductImageElement(novaImagem));
-  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
+  section.appendChild(createCustomElement('span', 'item__sku', sku));// linha de código fornecida pela escola Trybe
+  section.appendChild(createCustomElement('span', 'item__title', name));// linha de código fornecida pela escola Trybe
+  section.appendChild(createProductImageElement(novaImagem));// linha de código fornecida pela escola Trybe
+  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));// linha de código fornecida pela escola Trybe
 
-  return section;
+  return section;// linha de código fornecida pela escola Trybe
 }
 
-// function getSkuFromProductItem(item) {
-//   return item.querySelector('span.item__sku').innerText;
+// function getSkuFromProductItem(item) { // linha de código fornecida pela escola Trybe
+//   return item.querySelector('span.item__sku').innerText; // linha de código fornecida pela escola Trybe
 // }
+
 // 5. Some o valor total dos itens do carrinho de compras
 const mostrarValorNaTela = (precoTotal) => {
   const total = document.querySelector('.total-price');
