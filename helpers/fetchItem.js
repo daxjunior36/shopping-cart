@@ -8,6 +8,6 @@ return data;
 
 if (typeof module !== 'undefined') { // linha de código fornecida pela escola Trybe
   module.exports = { // linha de código fornecida pela escola Trybe
-    fetchItem, // linha de código fornecida pela escola Trybe
+    fetchItem, // linha de código fornecida pela escola Trybe.
   };
 }
