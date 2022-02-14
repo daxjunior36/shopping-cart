@@ -9,14 +9,14 @@ function createProductImageElement(imageSource) { // linha de código fornecida 
   return img;// linha de código fornecida pela escola Trybe
 }
 
-function createCustomElement(element, className, innerText) {// linha de código fornecida pela escola Trybe
+function createCustomElement(element, className, innerText) { // linha de código fornecida pela escola Trybe
   const e = document.createElement(element);// linha de código fornecida pela escola Trybe
   e.className = className;// linha de código fornecida pela escola Trybe
   e.innerText = innerText;// linha de código fornecida pela escola Trybe
   return e;// linha de código fornecida pela escola Trybe
 }
 
-function createProductItemElement({ id: sku, title: name, thumbnail: image }) {// linha de código fornecida pela escola Trybe
+function createProductItemElement({ id: sku, title: name, thumbnail: image }) { // linha de código fornecida pela escola Trybe
   const section = document.createElement('section');
   section.className = 'item';
 const novaImagem = image.replace('I.jpg', 'J.jpg');
